@@ -1,0 +1,21 @@
+{
+    "name": "Water Tracker – Roomish",
+    "short_name": "Roomish",
+    "description": "Reminder & Drink Intake Log is to give everyone an effortless, personalised way to stay properly hydrated — predicting the right sip before thirst strikes.",
+    "icons": [
+        {
+            "src": "favicon-16x16.png",
+            "sizes": "16x16",
+            "type": "image/png"
+        },
+        {
+            "src": "favicon-32x32.png",
+            "sizes": "32x32",
+            "type": "image/png"
+        }
+    ],
+    "theme_color": "#018CD8",
+    "background_color": "#ffffff",
+    "display": "standalone",
+    "start_url": "/"
+}

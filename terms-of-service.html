@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service - Roomish AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Manrope', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+            background: #F4F3F5;
+            color: #000;
+            -webkit-font-smoothing: antialiased;
+            font-size: 18px;
+            line-height: 1.6;
+            padding-top: 72px;
+        }
+
+        /* Fixed Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 72px;
+            background: #FFFFFF;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .header-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .header-logo img {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+        }
+
+        .header-logo span {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1d1d1f;
+        }
+
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .header-nav a {
+            color: #555;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .header-nav a:hover {
+            color: #007AFF;
+        }
+
+        .header-nav .separator {
+            color: #ccc;
+            font-size: 14px;
+        }
+
+        /* Main Content */
+        .main-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 40px;
+            min-height: calc(100vh - 72px - 140px);
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 40px;
+            color: #666;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.2s ease;
+        }
+
+        .back-link:hover {
+            color: #000;
+        }
+
+        .page-title {
+            font-size: 48px;
+            font-weight: 700;
+            color: #000;
+            margin-top: 24px;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+        }
+
+        .page-subtitle {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 40px;
+        }
+
+        /* Content Styles */
+        .content-section {
+            margin-bottom: 40px;
+        }
+
+        .content-section h2 {
+            font-size: 28px;
+            font-weight: 700;
+            color: #000;
+            margin-bottom: 20px;
+            margin-top: 40px;
+            letter-spacing: -0.01em;
+        }
+
+        .content-section h2:first-child {
+            margin-top: 0;
+        }
+
+        .content-section h3 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #000;
+            margin-bottom: 12px;
+            margin-top: 24px;
+        }
+
+        .content-section p {
+            font-size: 17px;
+            color: #333;
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+
+        .content-section ul,
+        .content-section ol {
+            font-size: 17px;
+            color: #333;
+            line-height: 1.7;
+            margin-bottom: 16px;
+            padding-left: 24px;
+        }
+
+        .content-section li {
+            margin-bottom: 8px;
+        }
+
+        .content-section a {
+            color: #007AFF;
+            text-decoration: none;
+        }
+
+        .content-section a:hover {
+            text-decoration: underline;
+        }
+
+        .content-section strong {
+            font-weight: 600;
+            color: #000;
+        }
+
+        /* Numbered sections */
+        .numbered-section {
+            margin-bottom: 32px;
+        }
+
+        .numbered-section h2 {
+            font-size: 24px;
+            font-weight: 700;
+            color: #000;
+            margin-bottom: 16px;
+            margin-top: 32px;
+        }
+
+        /* Footer */
+        .footer {
+            background: #FFFFFF;
+            padding: 40px 0;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-logo img {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+        }
+
+        .footer-logo span {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1d1d1f;
+        }
+
+        .footer-copyright {
+            font-size: 14px;
+            color: #999;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-container {
+                padding: 0 24px;
+            }
+
+            .header-nav {
+                display: none;
+            }
+
+            .main-content {
+                padding: 0 24px;
+            }
+
+            .page-title {
+                font-size: 36px;
+            }
+
+            .content-section h2,
+            .numbered-section h2 {
+                font-size: 22px;
+            }
+
+            .content-section h3 {
+                font-size: 18px;
+            }
+
+            .footer-content {
+                padding: 0 24px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .page-title {
+                font-size: 32px;
+            }
+
+            .content-section p,
+            .content-section ul,
+            .content-section ol {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Fixed Header -->
+    <header class="header">
+        <div class="header-container">
+            <a href="index.html" class="header-logo">
+                <img src="images/Logo main 512.png" alt="Roomish AI">
+                <span>Roomish AI</span>
+            </a>
+            <nav class="header-nav">
+                <a href="support.html">Support</a>
+                <span class="separator">|</span>
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <span class="separator">|</span>
+                <a href="terms-of-service.html">Terms of Service</a>
+                <span class="separator">|</span>
+                <a href="mailto:support@roomish.ai">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <a href="index.html" class="back-link">&larr; Back to Home</a>
+
+        <h1 class="page-title">Terms of Service</h1>
+        <p class="page-subtitle">Effective Date: December 25, 2025</p>
+
+        <div class="content-section">
+            <p>PLEASE READ THESE TERMS OF USE CAREFULLY. BY DOWNLOADING, ACCESSING, OR USING THE ROOMISH AI MOBILE APPLICATION (THE "APP" OR THE "SERVICE"), YOU AGREE TO BE BOUND BY THESE TERMS AND OUR PRIVACY POLICY.</p>
+            <p>IF YOU DO NOT AGREE, DO NOT USE THE APP.</p>
+
+            <h2>1. Acceptance of Terms</h2>
+            <p>These Terms form a legally binding agreement between you ("User", "you") and Roomish AI ("Company", "we", "us").</p>
+            <p>By using the App, you confirm that:</p>
+            <ul>
+                <li>you have read and understood these Terms</li>
+                <li>you agree to comply with them</li>
+                <li>you agree to the terms outlined in the Privacy Policy</li>
+            </ul>
+            <p>You can review the Privacy Policy at: <a href="privacy-policy.html">Privacy Policy</a></p>
+
+            <h2>2. Modifications to Terms</h2>
+            <p>We may update these Terms at our sole discretion.</p>
+            <p>If changes are made:</p>
+            <ul>
+                <li>the updated Terms will be posted in the App</li>
+                <li>the "Effective Date" will be revised</li>
+            </ul>
+            <p>Your continued use of the App after updates indicates acceptance of the revised Terms.</p>
+            <p>If you do not agree with the changes, you must stop using the App.</p>
+
+            <h2>3. Eligibility</h2>
+            <p>By using the App, you confirm that:</p>
+            <ul>
+                <li>you comply with the laws of your jurisdiction</li>
+                <li>you have the legal capacity to enter into agreements in your country</li>
+            </ul>
+
+            <h2>4. Description of the Service</h2>
+            <p>Roomish AI provides tools for AI-powered image generation and transformation.</p>
+            <p>The App includes the following features:</p>
+            <ul>
+                <li><strong>Interior Design</strong> — generating interior concepts based on photos submitted by the user</li>
+                <li><strong>Reference Design</strong> — applying stylistic transformations using a reference image</li>
+                <li><strong>AI Recolor</strong> — selectively recoloring or modifying elements within an image</li>
+            </ul>
+            <p>Additional information:</p>
+            <ul>
+                <li>The Service relies on third-party AI models</li>
+                <li>Generated output may be imperfect or inaccurate</li>
+                <li>The App is intended for creative inspiration only and does not provide professional design, architectural, engineering, or construction advice</li>
+            </ul>
+
+            <h2>5. Important AI Disclaimer</h2>
+            <p>You understand and agree that:</p>
+            <ul>
+                <li>AI-generated results may contain errors, distortions, artifacts, or inconsistencies</li>
+                <li>results may not match real-world conditions or your expectations</li>
+                <li>generated output is automatic and may not follow instructions precisely</li>
+                <li>the App is not a substitute for professional consultation</li>
+                <li>decisions made based on AI output are your own responsibility</li>
+                <li>you use AI-generated content entirely at your own risk</li>
+            </ul>
+            <p>We do not guarantee that generated outputs will match user instructions, expectations, or uploaded reference images.</p>
+
+            <h2>6. User Content and Data Storage</h2>
+            <p>"User Content" includes:</p>
+            <ul>
+                <li>photos</li>
+                <li>reference images</li>
+            </ul>
+            <p>By uploading User Content, you confirm that:</p>
+            <ul>
+                <li>you own the content or have permission to use it</li>
+                <li>your content does not violate third-party rights</li>
+                <li>your content complies with all applicable laws</li>
+            </ul>
+            <p><strong>Ownership:</strong></p>
+            <ul>
+                <li>You retain all rights to your User Content</li>
+                <li>You grant us a non-exclusive license to process your content solely to operate the Service</li>
+            </ul>
+            <p><strong>Photo Processing and Storage:</strong></p>
+            <p>When you upload a photo:</p>
+            <ul>
+                <li>The photo is processed by AI to generate design results</li>
+                <li>Both the original photo and generated results are saved to "My Rooms"</li>
+                <li>Original photos are stored in "My Photos" category</li>
+                <li>You can delete original photos or generated results at any time</li>
+            </ul>
+            <p><strong>Data Retention in "My Rooms":</strong></p>
+            <ul>
+                <li>Images (both originals and results) are stored on our servers while saved in "My Rooms"</li>
+                <li>When you delete images from "My Rooms", they are permanently removed from our servers</li>
+                <li>Images are retained while you have an active subscription</li>
+                <li>If you cancel your subscription and remain inactive for 90 days, all stored images may be automatically deleted</li>
+                <li>We recommend saving important photos and designs to your device before canceling</li>
+            </ul>
+            <p>We do not use your photos for:</p>
+            <ul>
+                <li>Training AI models</li>
+                <li>Marketing or promotional purposes</li>
+                <li>Any purpose other than providing the Service to you</li>
+            </ul>
+
+            <h2>7. Technical Data and Anonymous Identifiers</h2>
+            <p>The App operates without user accounts or sign-in.</p>
+            <p>When you use the App, the system generates technical identifiers, such as:</p>
+            <ul>
+                <li>anonymous device IDs (via Firebase)</li>
+                <li>session IDs</li>
+                <li>request identifiers</li>
+            </ul>
+            <p>These identifiers:</p>
+            <ul>
+                <li>do not contain personal data</li>
+                <li>cannot identify you as an individual</li>
+                <li>are used only to operate the Service and process your requests</li>
+            </ul>
+            <p><strong>Data Retention:</strong></p>
+            <ul>
+                <li>Technical identifiers and processing data are used temporarily to deliver the Service</li>
+                <li>All user-specific data is permanently deleted when you delete the App from your device</li>
+                <li>We do not maintain user accounts or store personal information</li>
+            </ul>
+
+            <h2>8. Subscriptions</h2>
+            <p>The App offers weekly, monthly, and annual PRO subscriptions.</p>
+            <p><strong>PRO Subscription:</strong></p>
+            <ul>
+                <li>A PRO subscription provides unlimited image generations during the subscription period</li>
+                <li>It does not unlock additional features — it removes generation limits only</li>
+            </ul>
+            <p><strong>Free Generations for New Users:</strong></p>
+            <ul>
+                <li>Each new user receives three free image generations</li>
+                <li>Free generations are granted once per device</li>
+            </ul>
+            <p><strong>Free Trial:</strong></p>
+            <ul>
+                <li>Eligible users receive a 3-day free trial when starting a subscription</li>
+                <li>If not cancelled at least 24 hours before the trial ends, it converts into a paid subscription</li>
+            </ul>
+            <p><strong>Auto-Renewal & Billing:</strong></p>
+            <ul>
+                <li>Subscriptions renew automatically unless cancelled at least 24 hours before the end of the billing period</li>
+                <li>All subscriptions are processed through Apple App Store</li>
+                <li>Billing, cancellations, and refunds are managed via your Apple ID</li>
+                <li>We do not have access to your payment information</li>
+                <li>We do not issue refunds for unused time or accidental purchases</li>
+            </ul>
+            <p>To cancel your subscription:</p>
+            <ul>
+                <li>Go to Settings > Apple ID > Subscriptions on your device</li>
+                <li>Select Roomish AI and choose "Cancel Subscription"</li>
+            </ul>
+            <p><strong>Trial Forfeiture:</strong></p>
+            <ul>
+                <li>Any unused portion of a free trial is forfeited once a paid subscription begins</li>
+            </ul>
+            <p><strong>Pricing:</strong></p>
+            <ul>
+                <li>Pricing is displayed in the App and App Store at the time of purchase</li>
+                <li>Prices may vary by region and are subject to change</li>
+            </ul>
+
+            <h2>9. Permitted and Prohibited Use</h2>
+            <p><strong>Permitted Use:</strong></p>
+            <p>You may use AI-generated content for:</p>
+            <ul>
+                <li>personal projects</li>
+                <li>commercial purposes (design presentations, real estate marketing, client work)</li>
+                <li>social media and portfolios</li>
+            </ul>
+            <p>Provided that you:</p>
+            <ul>
+                <li>do not misrepresent AI output as human-created professional architectural or engineering plans</li>
+                <li>understand that AI results are for inspiration and visualization only</li>
+                <li>do not use them as final construction or engineering documents</li>
+            </ul>
+            <p><strong>Prohibited Use:</strong></p>
+            <p>You may not use the App to generate or upload:</p>
+            <ul>
+                <li>illegal content</li>
+                <li>harmful, abusive, or hateful content</li>
+                <li>content that infringes copyrights, trademarks, or personal rights</li>
+            </ul>
+            <p>You also agree not to:</p>
+            <ul>
+                <li>reverse engineer, copy, modify, or decompile the App</li>
+                <li>upload copyrighted/trademarked materials without permission</li>
+                <li>resell or redistribute AI generation as a standalone product or service</li>
+                <li>interfere with or disrupt the Service</li>
+                <li>attempt to access systems or data without authorization</li>
+                <li>use the App to spam or abuse the Service</li>
+            </ul>
+            <p>You are fully responsible for your use of the App.</p>
+
+            <h2>10. Disclaimer of Warranties</h2>
+            <p>The App is provided on an "AS IS" and "AS AVAILABLE" basis.</p>
+            <p>We do not guarantee:</p>
+            <ul>
+                <li>uninterrupted operation of the App</li>
+                <li>accuracy, reliability, or completeness of generated results</li>
+                <li>compatibility with all devices</li>
+                <li>absence of errors, defects, or technical issues</li>
+            </ul>
+            <p>AI results are intended for inspiration only and should not be interpreted as professional advice.</p>
+            <p>You use the App at your own discretion and risk.</p>
+
+            <h2>11. Limitation of Liability</h2>
+            <p>To the extent permitted by applicable law:</p>
+            <ul>
+                <li>the Company is not responsible for indirect, incidental, or consequential damages resulting from your use of the App</li>
+                <li>AI-generated results may not reflect real-world conditions</li>
+                <li>you are solely responsible for how you interpret and use generated content</li>
+            </ul>
+
+            <h2>12. Indemnification</h2>
+            <p>You agree to use the App responsibly.</p>
+            <p>If your actions cause a legal claim against the Company (e.g., due to uploading content that violates someone else's rights), you agree to resolve the matter without involving the Company where possible.</p>
+            <p>This clause applies only to misuse caused directly by the user and does not limit your consumer rights.</p>
+
+            <h2>13. Termination</h2>
+            <p>We may:</p>
+            <ul>
+                <li>limit access</li>
+                <li>suspend your use of the App</li>
+                <li>or remove violating content</li>
+            </ul>
+            <p>if we believe you are breaching these Terms or interfering with the Service.</p>
+            <p>In most cases, we will attempt to resolve issues before restricting access.</p>
+            <p>You may stop using the App at any time by deleting it from your device.</p>
+
+            <h2>14. Governing Law</h2>
+            <p>These Terms are governed by widely accepted principles of international contract law.</p>
+            <p>You agree to attempt to resolve disputes through direct communication before taking formal action.</p>
+
+            <h2>15. Entire Agreement</h2>
+            <p>These Terms and the Privacy Policy constitute the entire agreement between you and Roomish AI.</p>
+
+            <h2>16. Contact</h2>
+            <p>If you have questions, please contact us: <a href="mailto:support@roomish.ai">support@roomish.ai</a></p>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="images/Logo main 512.png" alt="Roomish AI">
+                <span>Roomish AI</span>
+            </div>
+            <p class="footer-copyright">&copy; 2025 Roomish AI. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

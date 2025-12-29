@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(open:*)",
+      "Bash(ipconfig getifaddr:*)",
+      "Bash(lsof:*)",
+      "Bash(ls:*)"
+    ]
+  }
+}

@@ -1,96 +1,63 @@
-# Roomish WordPress Theme
+# Roomish AI Landing Page
 
-A modern, responsive WordPress theme designed for the Roomish water tracking app landing page.
+Лендинг для приложения Roomish AI, созданный точно по дизайну из Figma.
 
-## Features
-
-- **Responsive Design**: Fully responsive layout that works on all devices
-- **Modern UI**: Clean, modern design with smooth animations
-- **WordPress Standards**: Follows WordPress coding standards and best practices
-- **SEO Optimized**: Proper HTML structure and meta tags
-- **Accessibility**: WCAG compliant with proper ARIA labels
-- **Performance**: Optimized CSS and JavaScript for fast loading
-- **Customizable**: Easy to customize colors, fonts, and layout
-
-## Installation
-
-1. Upload the theme folder to `/wp-content/themes/`
-2. Activate the theme through the 'Appearance' menu in WordPress
-3. Customize the theme through the WordPress Customizer
-
-## Theme Structure
+## Структура проекта
 
 ```
 roomish-landing/
-├── style.css              # Main stylesheet with theme info
-├── index.php              # Main template file
-├── front-page.php         # Homepage template
-├── header.php             # Header template
-├── footer.php             # Footer template
-├── functions.php          # Theme functions
-├── inc/                   # Include files
-│   ├── template-tags.php  # Template tag functions
-│   ├── template-functions.php # Template functions
-│   └── customizer.php     # Customizer functions
-├── js/                    # JavaScript files
-│   ├── main.js           # Main JavaScript
-│   └── customizer.js     # Customizer JavaScript
-├── assets/               # Static assets
-│   └── site.webmanifest # Web app manifest
-└── template-parts/       # Template part files
-    ├── content.php       # Post content template
-    ├── content-search.php # Search results template
-    └── content-none.php  # No content template
+├── index.html          # Главная HTML страница
+├── styles.css          # Стили CSS
+├── images/            # Папка для изображений
+│   ├── app-store-badge.svg
+│   ├── hero-phones.png
+│   ├── feature-interior-design.jpg
+│   ├── feature-reference.jpg
+│   ├── feature-ai-recolor.jpg
+│   ├── steps-phone.png
+│   ├── redesign-room.jpg
+│   ├── style-1.jpg до style-6.jpg
+│   ├── color-palette-phone.png
+│   ├── wall-color-phone.png
+│   ├── screenshot-1.png до screenshot-4.png
+│   └── app-icon.png
+└── README.md          # Этот файл
 ```
 
-## Customization
+## Необходимые изображения
 
-### Colors
-The theme uses CSS custom properties for easy color customization:
+Вам нужно добавить следующие изображения в папку `images/`:
 
-```css
-:root {
-  --color-primary: #33313A;
-  --color-secondary: #8E8E93;
-  --color-link: #018CD8;
-  --color-link-hover: #1D62D5;
-  /* ... more colors */
-}
-```
+1. **app-store-badge.svg** - значок App Store
+2. **hero-phones.png** - изображение телефонов для hero секции
+3. **feature-interior-design.jpg** - изображение для карточки "Interior Design"
+4. **feature-reference.jpg** - изображение для карточки "Reference Design"
+5. **feature-ai-recolor.jpg** - изображение для карточки "AI Recolor"
+6. **steps-phone.png** - изображение телефона для секции "It's easy to get started"
+7. **redesign-room.jpg** - изображение комнаты для большой карточки
+8. **style-1.jpg** до **style-6.jpg** - изображения стилей (Scandinavian, Minimalist, Modern, Industrial, Rustic, Bohemian)
+9. **color-palette-phone.png** - изображение телефона с палитрой цветов
+10. **wall-color-phone.png** - изображение телефона с цветом стен
+11. **screenshot-1.png** до **screenshot-4.png** - скриншоты приложения
+12. **app-icon.png** - иконка приложения для футера
 
-### Typography
-The theme uses the Manrope font family from Google Fonts.
+## Как запустить
 
-### Layout
-The theme uses CSS Grid and Flexbox for modern, responsive layouts.
+1. Добавьте все необходимые изображения в папку `images/`
+2. Откройте файл `index.html` в браузере
 
-## Browser Support
+## Экспорт изображений из Figma
 
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
-- Internet Explorer 11+
+1. Откройте ваш дизайн в Figma
+2. Выделите нужный элемент (изображение, телефон, карточку)
+3. В правой панели найдите раздел "Export"
+4. Выберите формат (PNG для фото, SVG для иконок)
+5. Нажмите "Export" и сохраните в папку `images/`
 
-## Requirements
+## Особенности дизайна
 
-- WordPress 6.7 or higher
-- PHP 7.2 or higher
-
-## License
-
-This theme is licensed under the GPL v2 or later.
-
-## Support
-
-For support and questions, please contact the theme developer.
-
-## Changelog
-
-### Version 1.0.0
-- Initial release
-- Responsive design
-- WordPress standards compliance
-- Accessibility features
-- Performance optimizations
-
+- Светлый фон (#E8E8E8)
+- Белые карточки с тенями и скругленными углами
+- Адаптивный дизайн для всех устройств
+- Типографика соответствует Apple Human Interface Guidelines
+- Все отступы и размеры соответствуют макету Figma

@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Roomish AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Manrope', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+            background: #F4F3F5;
+            color: #000;
+            -webkit-font-smoothing: antialiased;
+            font-size: 18px;
+            line-height: 1.6;
+            padding-top: 72px;
+        }
+
+        /* Fixed Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 72px;
+            background: #FFFFFF;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .header-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .header-logo img {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+        }
+
+        .header-logo span {
+            font-size: 18px;
+            font-weight: 600;
+            color: #1d1d1f;
+        }
+
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .header-nav a {
+            color: #555;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .header-nav a:hover {
+            color: #007AFF;
+        }
+
+        .header-nav .separator {
+            color: #ccc;
+            font-size: 14px;
+        }
+
+        /* Main Content */
+        .main-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 40px;
+            min-height: calc(100vh - 72px - 140px);
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 40px;
+            color: #666;
+            text-decoration: none;
+            font-size: 16px;
+            transition: color 0.2s ease;
+        }
+
+        .back-link:hover {
+            color: #000;
+        }
+
+        .page-title {
+            font-size: 48px;
+            font-weight: 700;
+            color: #000;
+            margin-top: 24px;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+        }
+
+        .page-subtitle {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 40px;
+        }
+
+        /* Content Styles */
+        .content-section {
+            margin-bottom: 40px;
+        }
+
+        .content-section h2 {
+            font-size: 28px;
+            font-weight: 700;
+            color: #000;
+            margin-bottom: 20px;
+            margin-top: 40px;
+            letter-spacing: -0.01em;
+        }
+
+        .content-section h2:first-child {
+            margin-top: 0;
+        }
+
+        .content-section h3 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #000;
+            margin-bottom: 12px;
+            margin-top: 24px;
+        }
+
+        .content-section p {
+            font-size: 17px;
+            color: #333;
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+
+        .content-section ul,
+        .content-section ol {
+            font-size: 17px;
+            color: #333;
+            line-height: 1.7;
+            margin-bottom: 16px;
+            padding-left: 24px;
+        }
+
+        .content-section li {
+            margin-bottom: 8px;
+        }
+
+        .content-section a {
+            color: #007AFF;
+            text-decoration: none;
+        }
+
+        .content-section a:hover {
+            text-decoration: underline;
+        }
+
+        .content-section strong {
+            font-weight: 600;
+            color: #000;
+        }
+
+        /* Footer */
+        .footer {
+            background: #FFFFFF;
+            padding: 40px 0;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-logo img {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+        }
+
+        .footer-logo span {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1d1d1f;
+        }
+
+        .footer-copyright {
+            font-size: 14px;
+            color: #999;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-container {
+                padding: 0 24px;
+            }
+
+            .header-nav {
+                display: none;
+            }
+
+            .main-content {
+                padding: 0 24px;
+            }
+
+            .page-title {
+                font-size: 36px;
+            }
+
+            .content-section h2 {
+                font-size: 24px;
+            }
+
+            .content-section h3 {
+                font-size: 18px;
+            }
+
+            .footer-content {
+                padding: 0 24px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .page-title {
+                font-size: 32px;
+            }
+
+            .content-section p,
+            .content-section ul,
+            .content-section ol {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Fixed Header -->
+    <header class="header">
+        <div class="header-container">
+            <a href="index.html" class="header-logo">
+                <img src="images/Logo main 512.png" alt="Roomish AI">
+                <span>Roomish AI</span>
+            </a>
+            <nav class="header-nav">
+                <a href="support.html">Support</a>
+                <span class="separator">|</span>
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <span class="separator">|</span>
+                <a href="terms-of-service.html">Terms of Service</a>
+                <span class="separator">|</span>
+                <a href="mailto:support@roomish.ai">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <a href="index.html" class="back-link">&larr; Back to Home</a>
+
+        <h1 class="page-title">Privacy Policy</h1>
+        <p class="page-subtitle">Effective Date: December 25, 2025</p>
+
+        <div class="content-section">
+            <p>THIS PRIVACY POLICY EXPLAINS HOW ROOMISH AI ("WE," "US," OR "OUR") COLLECTS, USES, AND PROTECTS INFORMATION WHEN YOU USE THE ROOMISH AI MOBILE APPLICATION (THE "APP" OR THE "SERVICE").</p>
+            <p>BY USING THE APP, YOU AGREE TO THE PRACTICES DESCRIBED IN THIS PRIVACY POLICY.</p>
+            <p>IF YOU DO NOT AGREE, DO NOT USE THE APP.</p>
+
+            <h2>1. Information We Collect</h2>
+            <p>We do not collect personal information such as your name, address, phone number, or biometric identifiers.</p>
+            <p>We collect only the minimum data required to operate the App and deliver AI-based functionality.</p>
+
+            <h3>1.1. User Content</h3>
+            <ul>
+                <li>Photos you upload</li>
+                <li>Reference images</li>
+                <li>Generated results</li>
+            </ul>
+
+            <h3>1.2. Technical Data (Non-Personal)</h3>
+            <p>Collected automatically:</p>
+            <ul>
+                <li>Device type and OS version</li>
+                <li>App version</li>
+                <li>Anonymous technical identifiers (Firebase Installation ID)</li>
+                <li>Crash logs and performance metrics</li>
+                <li>Basic usage analytics</li>
+            </ul>
+            <p>These identifiers:</p>
+            <ul>
+                <li>cannot identify you as an individual</li>
+                <li>are deleted when you uninstall the App</li>
+            </ul>
+
+            <h3>1.3. Subscription Data</h3>
+            <p>When purchasing a subscription, we receive:</p>
+            <ul>
+                <li>Subscription status (active, expired, trial)</li>
+                <li>Anonymous transaction identifiers (from App Store)</li>
+            </ul>
+            <p>We never receive or store your credit card details.</p>
+
+            <h2>2. No User Accounts</h2>
+            <p>The App operates without user accounts or sign-in.</p>
+            <ul>
+                <li>You do not need to create an account to use the App</li>
+                <li>We do not collect email addresses, names, or login credentials</li>
+                <li>All users are anonymous</li>
+            </ul>
+
+            <h2>3. How We Use the Data</h2>
+            <p>Data is used solely to:</p>
+            <ul>
+                <li>operate the App and its AI features</li>
+                <li>generate interior designs and stylized images</li>
+                <li>store photos and results in "My Rooms"</li>
+                <li>maintain performance and fix crashes</li>
+                <li>enable subscriptions and restore purchases</li>
+                <li>support users who contact us</li>
+            </ul>
+            <p>We do not use your content for AI training or dataset creation.</p>
+
+            <h2>4. Storage and Deletion of Photos and Files</h2>
+
+            <h3>4.1. Photo Storage</h3>
+            <p>Uploaded photos and generated results are stored on our servers to enable the Service.</p>
+            <ul>
+                <li>Photos are stored in "My Rooms" and remain until you delete them</li>
+                <li>When you delete a photo from the App, it is permanently removed from our servers</li>
+                <li>We do not keep backups of deleted files</li>
+            </ul>
+
+            <h3>4.2. Automatic Deletion After Inactivity</h3>
+            <p>If you do not have an active subscription and remain inactive for 90 days:</p>
+            <ul>
+                <li>All stored photos and generated results are automatically deleted</li>
+                <li>This helps us manage server resources efficiently</li>
+            </ul>
+            <p>If you have an active subscription:</p>
+            <ul>
+                <li>Your photos and results are retained as long as your subscription is active</li>
+                <li>After subscription cancellation, the 90-day inactivity rule applies</li>
+            </ul>
+            <p>We recommend saving important photos and designs to your device before canceling your subscription or if you plan to be inactive.</p>
+
+            <h3>4.3. Immediate Deletion by the User</h3>
+            <p>When you delete a file inside the App:</p>
+            <ul>
+                <li>it is removed immediately from our servers</li>
+                <li>we do not keep backups</li>
+                <li>deleted content cannot be restored</li>
+            </ul>
+
+            <h2>5. Subscriptions and Payment Processing</h2>
+            <p>All subscription purchases are processed through Apple App Store.</p>
+            <p>We receive only:</p>
+            <ul>
+                <li>Subscription status (active, expired, trial)</li>
+                <li>Anonymous transaction identifiers</li>
+            </ul>
+            <p>We never receive:</p>
+            <ul>
+                <li>Your credit card details</li>
+                <li>Your Apple ID email</li>
+                <li>Your billing address</li>
+                <li>Any payment information</li>
+            </ul>
+            <p>Subscription management (cancellation, refunds) is handled entirely by Apple.</p>
+
+            <p><strong>New Users:</strong></p>
+            <ul>
+                <li>Each new user receives 3 free image generations</li>
+                <li>Free generations are granted once per device</li>
+            </ul>
+
+            <p><strong>PRO Subscriptions:</strong></p>
+            <ul>
+                <li>Weekly, monthly, and annual subscriptions are available</li>
+                <li>PRO subscriptions provide unlimited image generations</li>
+                <li>Subscriptions do not unlock extra features — they remove generation limits only</li>
+            </ul>
+
+            <p><strong>Free Trial:</strong></p>
+            <ul>
+                <li>A 3-day free trial may be available depending on App Store eligibility</li>
+                <li>If not cancelled at least 24 hours before the trial ends, it converts to a paid subscription</li>
+            </ul>
+
+            <p><strong>Auto-Renewal:</strong></p>
+            <ul>
+                <li>Subscriptions renew automatically unless cancelled at least 24 hours before the end of the billing period</li>
+            </ul>
+
+            <h2>6. Age Requirements</h2>
+            <p>Roomish AI does not contain harmful or sensitive content.</p>
+            <p>The App is suitable for users aged 4+ in accordance with App Store guidelines.</p>
+
+            <h2>7. Data Sharing</h2>
+            <p>We do not sell or rent user data.</p>
+            <p>We only share minimal required data with service providers that help operate the App, such as:</p>
+            <ul>
+                <li>cloud hosting providers</li>
+                <li>analytics services</li>
+                <li>performance and crash reporting tools</li>
+            </ul>
+            <p>These providers cannot use your data for their own purposes.</p>
+            <p>We may disclose limited information only if required by law.</p>
+
+            <h2>8. Security</h2>
+            <p>We use industry-standard safeguards:</p>
+            <ul>
+                <li>encrypted data transmission (TLS/HTTPS)</li>
+                <li>restricted access to servers</li>
+                <li>automatic deletion processes</li>
+                <li>routine monitoring for anomalies</li>
+            </ul>
+            <p>No system is fully immune to risks, but we take reasonable measures to protect stored data.</p>
+
+            <h2>9. User Rights</h2>
+            <p>Users may:</p>
+            <ul>
+                <li>delete photos or generated results at any time</li>
+                <li>delete the App to remove all data and anonymous identifiers</li>
+                <li>contact support for assistance</li>
+            </ul>
+            <p>Since we do not collect or store personal data (no accounts, no emails, no names), certain data protection rights (such as data correction or export) do not apply.</p>
+            <p>If you delete the App from your device:</p>
+            <ul>
+                <li>all anonymous identifiers are removed</li>
+                <li>stored photos in "My Rooms" will be deleted after 90 days of inactivity (if no subscription)</li>
+            </ul>
+
+            <h2>10. Changes to This Policy</h2>
+            <p>We may update this Privacy Policy periodically.</p>
+            <p>The "Effective Date" at the top will reflect the latest revision.</p>
+            <p>Continued use of the App after changes means acceptance of the updated Policy.</p>
+
+            <h2>11. Contact</h2>
+            <p>If you have any questions, please contact us at: <a href="mailto:support@roomish.ai">support@roomish.ai</a></p>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="images/Logo main 512.png" alt="Roomish AI">
+                <span>Roomish AI</span>
+            </div>
+            <p class="footer-copyright">&copy; 2025 Roomish AI. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

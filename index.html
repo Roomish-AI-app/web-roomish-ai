@@ -1,0 +1,1372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roomish AI - Transform Any Room in 30 Seconds with AI</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: #F4F3F5;
+            color: #000;
+            -webkit-font-smoothing: antialiased;
+            line-height: 1.6;
+        }
+
+        /* ========================================
+           HEADER
+           ======================================== */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 76px;
+            background: #FFFFFF;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            padding: 0 40px;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .header-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .header-logo img {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+        }
+
+        .header-logo span {
+            font-size: 19px;
+            font-weight: 600;
+            color: #000;
+        }
+
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .header-nav a {
+            color: #666;
+            text-decoration: none;
+            font-size: 15px;
+            padding: 8px 4px;
+            transition: color 0.3s ease;
+        }
+
+        .header-nav a:hover {
+            color: #000;
+        }
+
+        .header-nav .separator {
+            color: #ccc;
+            font-size: 14px;
+        }
+
+        /* ========================================
+           HERO SECTION
+           ======================================== */
+        .hero {
+            padding: 130px 0 20px;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .hero-text {
+            flex: 1;
+            max-width: 50%;
+        }
+
+        .hero-text h1 {
+            font-size: 72px;
+            font-weight: 700;
+            line-height: 1.05;
+            color: #000;
+            margin-bottom: 22px;
+            letter-spacing: -0.02em;
+        }
+
+        .hero-description {
+            font-size: 18px;
+            color: #666;
+            line-height: 1.5;
+            max-width: 500px;
+            margin-bottom: 26px;
+        }
+
+        .app-badge {
+            height: 50px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            border-radius: 8px;
+        }
+
+        .app-badge:hover {
+            transform: scale(1.03);
+        }
+
+        .free-text {
+            font-size: 14px;
+            color: #999;
+            margin-top: 12px;
+            margin-bottom: 16px;
+        }
+
+        .feature-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .feature-tag {
+            background: #FFFFFF;
+            color: #333;
+            padding: 10px 20px;
+            border-radius: 24px;
+            font-size: 14px;
+            border: 1px solid #E0E0E0;
+        }
+
+        /* Hero Phone Section */
+        .hero-phone {
+            flex: 1;
+            max-width: 45%;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Gradient Blobs */
+        .gradient-blob {
+            position: absolute;
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .gradient-blob-1 {
+            width: 450px;
+            height: 450px;
+            background: radial-gradient(circle, rgba(120, 160, 255, 0.25) 0%, rgba(120, 160, 255, 0.1) 50%, transparent 100%);
+            filter: blur(100px);
+            top: -80px;
+            right: -100px;
+            animation: blobPulse1 10s ease-in-out infinite;
+        }
+
+        .gradient-blob-2 {
+            width: 380px;
+            height: 380px;
+            background: radial-gradient(circle, rgba(180, 140, 255, 0.2) 0%, rgba(180, 140, 255, 0.08) 50%, transparent 100%);
+            filter: blur(120px);
+            top: 50%;
+            left: -120px;
+            transform: translateY(-50%);
+            animation: blobPulse2 12s ease-in-out infinite;
+            animation-delay: 2s;
+        }
+
+        .gradient-blob-3 {
+            width: 320px;
+            height: 320px;
+            background: radial-gradient(circle, rgba(255, 220, 180, 0.15) 0%, rgba(255, 220, 180, 0.06) 50%, transparent 100%);
+            filter: blur(90px);
+            bottom: -60px;
+            right: -60px;
+            animation: blobPulse3 9s ease-in-out infinite;
+            animation-delay: 4s;
+        }
+
+        @keyframes blobPulse1 {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.08); }
+        }
+
+        @keyframes blobPulse2 {
+            0%, 100% { transform: translateY(-50%) scale(1); }
+            50% { transform: translateY(-50%) scale(1.06); }
+        }
+
+        @keyframes blobPulse3 {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        /* iPhone Mockup */
+        .iphone-mockup {
+            position: relative;
+            z-index: 2;
+            width: 275px;
+            margin-top: 12px;
+            filter: drop-shadow(0 30px 60px rgba(0, 0, 0, 0.1));
+        }
+
+        .iphone-frame {
+            display: block;
+            width: 100%;
+            height: auto;
+            position: relative;
+            z-index: 10;
+            pointer-events: none;
+        }
+
+        .iphone-screen {
+            position: absolute;
+            top: 1.2%;
+            left: 5.5%;
+            width: 89%;
+            height: 97.5%;
+            border-radius: 32px;
+            overflow: hidden;
+            z-index: 5;
+            background: #000;
+        }
+
+        /* Before/After Slider */
+        .ba-slider {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .ba-slider .ba-before,
+        .ba-slider .ba-after-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .ba-slider .ba-before img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .ba-slider .ba-after-container {
+            clip-path: inset(0 10% 0 0);
+            animation: baSlide 4s ease-in-out infinite;
+        }
+
+        .ba-slider .ba-after {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .ba-slider .ba-after.active {
+            opacity: 1;
+        }
+
+        .ba-slider .ba-after img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @keyframes baSlide {
+            0%, 5% { clip-path: inset(0 90% 0 0); }
+            45%, 55% { clip-path: inset(0 10% 0 0); }
+            95%, 100% { clip-path: inset(0 90% 0 0); }
+        }
+
+        .ba-slider .ba-handle {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+            z-index: 10;
+            left: 10%;
+            animation: baHandleSlide 4s ease-in-out infinite;
+        }
+
+        @keyframes baHandleSlide {
+            0%, 5% { left: 10%; }
+            45%, 55% { left: 90%; }
+            95%, 100% { left: 10%; }
+        }
+
+        .ba-slider .ba-handle::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 36px;
+            height: 36px;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .ba-slider .ba-handle .arrows {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            z-index: 11;
+        }
+
+        .ba-slider .ba-handle .arrows span {
+            width: 0;
+            height: 0;
+            border-style: solid;
+        }
+
+        .ba-slider .ba-handle .arrows .arrow-left {
+            border-width: 5px 7px 5px 0;
+            border-color: transparent #666 transparent transparent;
+        }
+
+        .ba-slider .ba-handle .arrows .arrow-right {
+            border-width: 5px 0 5px 7px;
+            border-color: transparent transparent transparent #666;
+        }
+
+        /* ========================================
+           SECTIONS COMMON
+           ======================================== */
+        section {
+            padding: 60px 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 46px;
+            font-weight: 700;
+            color: #000;
+            margin-bottom: 20px;
+            letter-spacing: -0.02em;
+        }
+
+        .section-header p {
+            font-size: 19px;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* ========================================
+           FEATURES SECTION (What you can do)
+           ======================================== */
+        .features {
+            background: #F4F3F5;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: #FFFFFF;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            opacity: 0;
+            transform: translateX(-30px);
+        }
+
+        .feature-card.animated {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .feature-card.animated:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .feature-img {
+            width: 100%;
+            aspect-ratio: 16 / 10;
+            overflow: hidden;
+        }
+
+        .feature-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .feature-text {
+            padding: 24px 28px;
+        }
+
+        .feature-text h3 {
+            font-size: 22px;
+            font-weight: 600;
+            color: #000;
+            margin-bottom: 6px;
+        }
+
+        .feature-text p {
+            font-size: 15px;
+            color: #666;
+            line-height: 1.4;
+        }
+
+        /* ========================================
+           HOW IT WORKS SECTION
+           ======================================== */
+        .how-it-works {
+            background: #F4F3F5;
+        }
+
+        .how-it-works .section-header {
+            margin-bottom: 60px;
+        }
+
+        .steps-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            gap: 80px;
+        }
+
+        .steps-phone {
+            flex: 1;
+            max-width: 45%;
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+
+        .phone-mockup-container {
+            position: relative;
+            width: 300px;
+        }
+
+        .steps-phone-img {
+            width: 100%;
+            height: auto;
+            display: block;
+            filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.1));
+        }
+
+        .floating-btn-wrapper {
+            position: absolute;
+            animation-duration: 3.5s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in-out;
+            z-index: 10;
+        }
+
+        .floating-btn-glow {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 115%;
+            height: 115%;
+            border-radius: 50%;
+            filter: blur(22px);
+            z-index: -1;
+            opacity: 0.85;
+        }
+
+        .floating-btn-img {
+            position: relative;
+            width: 100%;
+            height: auto;
+            display: block;
+            filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.15));
+            z-index: 2;
+        }
+
+        /* Button 1 - Room Type (upper left, blue glow) - 40% overlap */
+        .btn-room-type {
+            width: 235px;
+            top: 8%;
+            left: -35%;
+            animation-name: floatBtn1;
+        }
+
+        .btn-room-type .floating-btn-glow {
+            background: radial-gradient(circle, rgba(100, 150, 255, 0.4) 0%, transparent 70%);
+        }
+
+        /* Button 2 - Room Style (middle right, purple glow) - 40% overlap */
+        .btn-room-style {
+            width: 235px;
+            top: 40%;
+            right: -35%;
+            animation-name: floatBtn2;
+            animation-delay: 0.5s;
+        }
+
+        .btn-room-style .floating-btn-glow {
+            background: radial-gradient(circle, rgba(150, 100, 255, 0.35) 0%, transparent 70%);
+        }
+
+        /* Button 3 - Color Palette (lower left, orange glow) - 40% overlap */
+        .btn-color-palette {
+            width: 245px;
+            bottom: 12%;
+            left: -35%;
+            animation-name: floatBtn3;
+            animation-delay: 1s;
+        }
+
+        .btn-color-palette .floating-btn-glow {
+            background: radial-gradient(circle, rgba(255, 180, 100, 0.35) 0%, transparent 70%);
+        }
+
+        @keyframes floatBtn1 {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-12px); }
+        }
+
+        @keyframes floatBtn2 {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes floatBtn3 {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-14px); }
+        }
+
+        .steps-list {
+            flex: 1;
+            max-width: 45%;
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .step {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
+
+        .step-num {
+            width: 48px;
+            height: 48px;
+            min-width: 48px;
+            background: #FFFFFF;
+            border: 2px solid #E0E0E0;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: 700;
+            color: #000;
+        }
+
+        .step-content h3 {
+            font-size: 24px;
+            font-weight: 600;
+            color: #000;
+            margin-bottom: 8px;
+        }
+
+        .step-content p {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        /* ========================================
+           REDESIGN SECTION (2x2 Grid)
+           ======================================== */
+        .redesign {
+            background: #F4F3F5;
+        }
+
+        .redesign-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .redesign-card {
+            background: transparent;
+            border-radius: 32px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .redesign-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .redesign-card:hover img {
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .redesign-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 32px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+        }
+
+        .redesign-card-text {
+            position: absolute;
+            top: 28px;
+            left: 28px;
+            right: 28px;
+            z-index: 2;
+        }
+
+        .redesign-card-text .small-text {
+            font-size: 18px;
+            color: #999;
+            margin-bottom: 10px;
+        }
+
+        .redesign-card-text .large-text {
+            font-size: 28px;
+            font-weight: 700;
+            color: #000;
+            line-height: 1.3;
+        }
+
+        /* ========================================
+           CTA SECTION
+           ======================================== */
+        .cta-section {
+            background: #F4F3F5;
+            padding: 70px 0;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 42px;
+            font-weight: 700;
+            color: #000;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+        }
+
+        .cta-section p {
+            font-size: 21px;
+            color: #666;
+            margin-bottom: 32px;
+        }
+
+        .cta-section .app-badge {
+            height: 56px;
+        }
+
+        /* ========================================
+           FOOTER
+           ======================================== */
+        .footer {
+            background: #FFFFFF;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .footer-logo img {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+        }
+
+        .footer-logo span {
+            font-size: 19px;
+            font-weight: 600;
+            color: #000;
+        }
+
+        .footer-nav {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .footer-nav a {
+            color: #666;
+            text-decoration: none;
+            font-size: 15px;
+            padding: 8px 4px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-nav a:hover {
+            color: #000;
+        }
+
+        .footer-nav .separator {
+            color: #ccc;
+            font-size: 12px;
+        }
+
+        .footer-copyright {
+            font-size: 13px;
+            color: #999;
+        }
+
+        /* ========================================
+           HERO ANIMATIONS (on page load)
+           ======================================== */
+        .hero-animate {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .hero-animate.animate-in {
+            animation: heroFadeIn 0.8s ease-out forwards;
+        }
+
+        @keyframes heroFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-text h1.hero-animate { animation-delay: 0s; }
+        .hero-description.hero-animate { animation-delay: 0.1s; }
+        .hero-text .app-badge-wrapper.hero-animate { animation-delay: 0.2s; }
+        .free-text.hero-animate { animation-delay: 0.3s; }
+        .feature-tags.hero-animate { animation-delay: 0.4s; }
+        .hero-phone.hero-animate { animation-delay: 0.2s; }
+
+        /* ========================================
+           FEATURE CARDS ANIMATIONS (scroll-triggered)
+           ======================================== */
+        @keyframes cardSlideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .feature-card.animate-in {
+            animation: cardSlideInLeft 0.8s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+        }
+
+        .feature-card:nth-child(1).animate-in { animation-delay: 0s; }
+        .feature-card:nth-child(2).animate-in { animation-delay: 0.25s; }
+        .feature-card:nth-child(3).animate-in { animation-delay: 0.5s; }
+
+        /* ========================================
+           STEPS ANIMATIONS (scroll-triggered)
+           ======================================== */
+        .step {
+            opacity: 0;
+            transform: translateY(-30px);
+        }
+
+        .step.animate-in {
+            animation: stepSlideDown 0.8s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+        }
+
+        @keyframes stepSlideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .step:nth-child(1).animate-in { animation-delay: 0s; }
+        .step:nth-child(2).animate-in { animation-delay: 0.25s; }
+        .step:nth-child(3).animate-in { animation-delay: 0.5s; }
+
+        .steps-phone {
+            opacity: 0;
+        }
+
+        .steps-phone.animate-in {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* ========================================
+           REDESIGN CARDS ANIMATIONS (scroll-triggered)
+           ======================================== */
+        .redesign-card {
+            opacity: 0;
+            transform: translateY(60px);
+            transition: opacity 0.7s ease, transform 0.7s ease, box-shadow 0.3s ease;
+        }
+
+        .redesign-card.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .redesign-card:nth-child(1) { transition-delay: 0s; }
+        .redesign-card:nth-child(2) { transition-delay: 0.1s; }
+        .redesign-card:nth-child(3) { transition-delay: 0.2s; }
+        .redesign-card:nth-child(4) { transition-delay: 0.3s; }
+
+        /* ========================================
+           RESPONSIVE (Mobile)
+           ======================================== */
+        @media (max-width: 900px) {
+            .header {
+                padding: 0 20px;
+                height: 64px;
+            }
+
+            .header-nav {
+                display: none;
+            }
+
+            .hero {
+                min-height: auto;
+                padding-top: 84px;
+                padding-bottom: 60px;
+            }
+
+            .hero-container {
+                flex-direction: column;
+                padding: 0 20px;
+                gap: 40px;
+            }
+
+            .hero-text {
+                max-width: 100%;
+                text-align: center;
+            }
+
+            .hero-text h1 {
+                font-size: 42px;
+            }
+
+            .hero-description {
+                font-size: 17px;
+                max-width: 100%;
+            }
+
+            .feature-tags {
+                justify-content: center;
+            }
+
+            .hero-phone {
+                max-width: 280px;
+                align-items: center;
+            }
+
+            .gradient-blob {
+                display: none;
+            }
+
+            .iphone-mockup {
+                width: 260px;
+                height: auto;
+            }
+
+            .iphone-frame {
+                height: auto;
+                width: 100%;
+            }
+
+            .container {
+                padding: 0 20px;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+
+            .section-header h2 {
+                font-size: 32px;
+            }
+
+            .section-header p {
+                font-size: 16px;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .steps-container {
+                flex-direction: column;
+                gap: 40px;
+            }
+
+            .steps-phone {
+                max-width: 260px;
+                order: 2;
+            }
+
+            .steps-list {
+                max-width: 100%;
+                order: 1;
+            }
+
+            .phone-mockup-container {
+                width: 240px;
+            }
+
+            .floating-btn-wrapper {
+                display: none;
+            }
+
+            .redesign-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .redesign-card-text .small-text {
+                font-size: 15px;
+            }
+
+            .redesign-card-text .large-text {
+                font-size: 20px;
+            }
+
+            .cta-section h2 {
+                font-size: 30px;
+            }
+
+            .cta-section p {
+                font-size: 18px;
+            }
+
+            .footer-nav {
+                flex-wrap: wrap;
+                gap: 6px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <div class="header-logo">
+                <img src="images/Logo main 512.png" alt="Roomish AI">
+                <span>Roomish AI</span>
+            </div>
+            <nav class="header-nav">
+                <a href="support.html">Support</a>
+                <span class="separator">|</span>
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <span class="separator">|</span>
+                <a href="terms-of-service.html">Terms of Service</a>
+                <span class="separator">|</span>
+                <a href="mailto:support@roomish.ai">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-text">
+                <h1 class="hero-animate">Transform Any Room in 30 Seconds</h1>
+                <p class="hero-description hero-animate">Roomish AI is a smart interior design app that transforms any room in 30 seconds. Just take a photo — AI does the rest. See your space in any style instantly.</p>
+                <div class="app-badge-wrapper hero-animate">
+                    <a href="https://apps.apple.com/app/roomish-ai" target="_blank">
+                        <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us" class="app-badge" alt="Download on App Store">
+                    </a>
+                </div>
+                <p class="free-text hero-animate">3 free generations • No credit card required</p>
+                <div class="feature-tags hero-animate">
+                    <span class="feature-tag">20+ interior styles</span>
+                    <span class="feature-tag">AI-powered design</span>
+                    <span class="feature-tag">Instant results</span>
+                    <span class="feature-tag">Easy to use</span>
+                </div>
+            </div>
+            <div class="hero-phone hero-animate">
+                <div class="gradient-blob gradient-blob-1"></div>
+                <div class="gradient-blob gradient-blob-2"></div>
+                <div class="gradient-blob gradient-blob-3"></div>
+                <div class="iphone-mockup">
+                    <div class="iphone-screen">
+                        <div class="ba-slider">
+                            <div class="ba-before">
+                                <img src="images/1.png" alt="Before">
+                            </div>
+                            <div class="ba-after-container">
+                                <div class="ba-after active">
+                                    <img src="images/2.png" alt="After Style 1">
+                                </div>
+                                <div class="ba-after">
+                                    <img src="images/3.png" alt="After Style 2">
+                                </div>
+                                <div class="ba-after">
+                                    <img src="images/4.png" alt="After Style 3">
+                                </div>
+                                <div class="ba-after">
+                                    <img src="images/5.png" alt="After Style 4">
+                                </div>
+                            </div>
+                            <div class="ba-handle">
+                                <div class="arrows">
+                                    <span class="arrow-left"></span>
+                                    <span class="arrow-right"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <img src="images/apple-iphone-13-pro-2021-medium.png" alt="iPhone" class="iphone-frame">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>What you can do with Roomish AI</h2>
+                <p>Use AI-based redesigning, room type matching, and create designs with AI</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-img">
+                        <img src="images/01.png" alt="Interior Design">
+                    </div>
+                    <div class="feature-text">
+                        <h3>Interior Design</h3>
+                        <p>Redesign your room</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-img">
+                        <img src="images/02.png" alt="Reference Design">
+                    </div>
+                    <div class="feature-text">
+                        <h3>Reference Design</h3>
+                        <p>Create design with references</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-img">
+                        <img src="images/03.png" alt="AI Recolor">
+                    </div>
+                    <div class="feature-text">
+                        <h3>AI Recolor</h3>
+                        <p>Create design with AI tools</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2>It's easy to get started</h2>
+            </div>
+            <div class="steps-container">
+                <div class="steps-phone">
+                    <div class="phone-mockup-container">
+                        <img src="images/Screen1.png" alt="App Screenshot" class="steps-phone-img">
+                        <div class="floating-btn-wrapper btn-room-type">
+                            <div class="floating-btn-glow"></div>
+                            <img src="images/0.1.png" alt="Room Type" class="floating-btn-img">
+                        </div>
+                        <div class="floating-btn-wrapper btn-room-style">
+                            <div class="floating-btn-glow"></div>
+                            <img src="images/0.2.png" alt="Room Style" class="floating-btn-img">
+                        </div>
+                        <div class="floating-btn-wrapper btn-color-palette">
+                            <div class="floating-btn-glow"></div>
+                            <img src="images/0.3.png" alt="Color Palette" class="floating-btn-img">
+                        </div>
+                    </div>
+                </div>
+                <div class="steps-list">
+                    <div class="step">
+                        <div class="step-num">1</div>
+                        <div class="step-content">
+                            <h3>Upload a room photo</h3>
+                            <p>Take a photo or choose from gallery</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-num">2</div>
+                        <div class="step-content">
+                            <h3>Choose a style and colors</h3>
+                            <p>Choose from 20+ styles and color palettes</p>
+                        </div>
+                    </div>
+                    <div class="step">
+                        <div class="step-num">3</div>
+                        <div class="step-content">
+                            <h3>Generate and refine</h3>
+                            <p>Get results in 30 seconds. Save and share instantly</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Redesign Section -->
+    <section class="redesign">
+        <div class="container">
+            <div class="section-header">
+                <h2>Redesign rooms your way</h2>
+                <p>Explore styles, colors, and details with AI — and change only what you want.</p>
+            </div>
+            <div class="redesign-grid">
+                <div class="redesign-card">
+                    <div class="redesign-card-text">
+                        <p class="small-text">Redesign your space</p>
+                        <p class="large-text">See your room in any style</p>
+                    </div>
+                    <img src="images/Card Container1.png" alt="Redesign your space">
+                </div>
+                <div class="redesign-card">
+                    <div class="redesign-card-text">
+                        <p class="small-text">Explore interior styles</p>
+                        <p class="large-text">Compare 20+ styles side by side</p>
+                    </div>
+                    <img src="images/Card Container2.png" alt="Explore interior styles">
+                </div>
+                <div class="redesign-card">
+                    <div class="redesign-card-text">
+                        <p class="small-text">Choose a color palette</p>
+                        <p class="large-text">Choose a palette you like. Or let AI suggest one</p>
+                    </div>
+                    <img src="images/Card Container3.png" alt="Choose a color palette">
+                </div>
+                <div class="redesign-card">
+                    <div class="redesign-card-text">
+                        <p class="small-text">Refine the details</p>
+                        <p class="large-text">Change colors selectively with AI Recolor</p>
+                    </div>
+                    <img src="images/Card Container4.png" alt="Refine the details">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to transform your space?</h2>
+            <p>Start with 3 free generations</p>
+            <a href="https://apps.apple.com/app/roomish-ai" target="_blank">
+                <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us" class="app-badge" alt="Download on App Store">
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-logo">
+            <img src="images/Logo main 512.png" alt="Roomish AI">
+            <span>Roomish AI</span>
+        </div>
+        <nav class="footer-nav">
+            <a href="support.html">Support</a>
+            <span class="separator">•</span>
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <span class="separator">•</span>
+            <a href="terms-of-service.html">Terms of Service</a>
+            <span class="separator">•</span>
+            <a href="mailto:support@roomish.ai">Contact</a>
+        </nav>
+        <p class="footer-copyright">© 2025 Roomish AI. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // ========================================
+        // BEFORE/AFTER SLIDER
+        // ========================================
+        const baAfterImages = document.querySelectorAll('.ba-after');
+        let currentAfterImage = 0;
+        const sliderCycleDuration = 4000;
+
+        function cycleAfterImage() {
+            baAfterImages[currentAfterImage].classList.remove('active');
+            currentAfterImage = (currentAfterImage + 1) % baAfterImages.length;
+            baAfterImages[currentAfterImage].classList.add('active');
+        }
+
+        if (baAfterImages.length > 0) {
+            setInterval(cycleAfterImage, sliderCycleDuration);
+        }
+
+        // ========================================
+        // HERO ANIMATIONS (on page load)
+        // ========================================
+        document.addEventListener('DOMContentLoaded', function() {
+            const heroElements = document.querySelectorAll('.hero-animate');
+
+            // Small delay to ensure smooth animation start
+            setTimeout(() => {
+                heroElements.forEach(el => {
+                    el.classList.add('animate-in');
+                });
+            }, 100);
+        });
+
+        // ========================================
+        // FEATURE CARDS ANIMATION (scroll-triggered)
+        // ========================================
+        const featureCards = document.querySelectorAll('.feature-card');
+        const featuresGrid = document.querySelector('.features-grid');
+
+        const featuresObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    featureCards.forEach((card, index) => {
+                        card.classList.add('animate-in');
+                        // After animation completes, add 'animated' class for hover effects
+                        setTimeout(() => {
+                            card.classList.add('animated');
+                        }, 1200 + index * 300);
+                    });
+                    featuresObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'  // Trigger when cards are 100px from bottom of viewport
+        });
+
+        if (featuresGrid) {
+            featuresObserver.observe(featuresGrid);
+        }
+
+        // ========================================
+        // STEPS ANIMATION (scroll-triggered)
+        // ========================================
+        const steps = document.querySelectorAll('.step');
+        const stepsPhone = document.querySelector('.steps-phone');
+        const stepsList = document.querySelector('.steps-list');
+
+        const stepsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Animate steps one by one
+                    steps.forEach((step) => {
+                        step.classList.add('animate-in');
+                    });
+                    // Animate phone
+                    if (stepsPhone) {
+                        stepsPhone.classList.add('animate-in');
+                    }
+                    stepsObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.2,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        if (stepsList) {
+            stepsObserver.observe(stepsList);
+        }
+
+        // ========================================
+        // REDESIGN CARDS ANIMATION (scroll-triggered)
+        // ========================================
+        const redesignCards = document.querySelectorAll('.redesign-card');
+        const redesignSection = document.querySelector('.redesign');
+
+        const redesignObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    redesignCards.forEach((card) => {
+                        card.classList.add('animated');
+                    });
+                    redesignObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.2 });
+
+        if (redesignSection) {
+            redesignObserver.observe(redesignSection);
+        }
+    </script>
+</body>
+</html>

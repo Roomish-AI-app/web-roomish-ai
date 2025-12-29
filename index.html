@@ -889,6 +889,9 @@
         /* ========================================
            RESPONSIVE (Mobile)
            ======================================== */
+        /* ========================================
+           RESPONSIVE - Tablet (max-width: 900px)
+           ======================================== */
         @media (max-width: 900px) {
             .header {
                 padding: 0 20px;
@@ -1016,6 +1019,147 @@
             .footer-nav {
                 flex-wrap: wrap;
                 gap: 6px;
+            }
+        }
+
+        /* ========================================
+           RESPONSIVE - Mobile (max-width: 576px)
+           ======================================== */
+        @media (max-width: 576px) {
+            /* Header Mobile */
+            .header {
+                padding: 0 16px;
+                height: 56px;
+            }
+
+            .header-logo img {
+                width: 36px;
+                height: 36px;
+            }
+
+            .header-logo span {
+                font-size: 16px;
+            }
+
+            /* Hero Mobile */
+            .hero {
+                padding-top: 72px;
+                padding-bottom: 40px;
+            }
+
+            .hero-container {
+                padding: 0 16px;
+                gap: 32px;
+            }
+
+            .hero-text h1 {
+                font-size: 32px;
+                margin-bottom: 16px;
+                line-height: 1.1;
+            }
+
+            .hero-description {
+                font-size: 15px;
+                line-height: 1.5;
+                margin-bottom: 20px;
+            }
+
+            .app-badge {
+                height: 44px;
+            }
+
+            .free-text {
+                font-size: 13px;
+                margin-top: 10px;
+                margin-bottom: 14px;
+            }
+
+            .feature-tags {
+                gap: 8px;
+            }
+
+            .feature-tag {
+                padding: 8px 14px;
+                font-size: 12px;
+                border-radius: 20px;
+            }
+
+            .hero-phone {
+                max-width: 240px;
+            }
+
+            .iphone-mockup {
+                width: 220px;
+            }
+
+            .iphone-screen {
+                border-radius: 26px;
+            }
+        }
+
+        /* ========================================
+           RESPONSIVE - Small Mobile (max-width: 375px)
+           ======================================== */
+        @media (max-width: 375px) {
+            /* Header Small */
+            .header {
+                padding: 0 12px;
+                height: 52px;
+            }
+
+            .header-logo img {
+                width: 32px;
+                height: 32px;
+            }
+
+            .header-logo span {
+                font-size: 15px;
+            }
+
+            /* Hero Small */
+            .hero {
+                padding-top: 64px;
+                padding-bottom: 32px;
+            }
+
+            .hero-container {
+                padding: 0 12px;
+                gap: 24px;
+            }
+
+            .hero-text h1 {
+                font-size: 26px;
+                margin-bottom: 12px;
+            }
+
+            .hero-description {
+                font-size: 14px;
+                margin-bottom: 16px;
+            }
+
+            .app-badge {
+                height: 40px;
+            }
+
+            .free-text {
+                font-size: 12px;
+            }
+
+            .feature-tag {
+                padding: 6px 12px;
+                font-size: 11px;
+            }
+
+            .hero-phone {
+                max-width: 200px;
+            }
+
+            .iphone-mockup {
+                width: 180px;
+            }
+
+            .iphone-screen {
+                border-radius: 22px;
             }
         }
     </style>

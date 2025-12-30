@@ -300,7 +300,25 @@
                 font-size: 16px;
             }
         }
+
+        /* App mode - hide navigation when opened from iOS app */
+        body.app-mode {
+            padding-top: 0;
+        }
+        body.app-mode .header,
+        body.app-mode .back-link,
+        body.app-mode .footer {
+            display: none !important;
+        }
     </style>
+    <script>
+        if (window.location.search.includes('app=true')) {
+            document.documentElement.classList.add('app-mode');
+            document.addEventListener('DOMContentLoaded', function() {
+                document.body.classList.add('app-mode');
+            });
+        }
+    </script>
 </head>
 <body>
     <!-- Fixed Header -->

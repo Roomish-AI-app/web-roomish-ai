@@ -17,6 +17,7 @@
             color: #000;
             -webkit-font-smoothing: antialiased;
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
         /* ========================================
@@ -978,8 +979,10 @@
             }
 
             .steps-phone {
-                max-width: 260px;
+                max-width: 100%;
+                width: 100%;
                 order: 2;
+                overflow: visible;
             }
 
             .steps-list {
@@ -991,8 +994,31 @@
                 width: 240px;
             }
 
+            /* Floating buttons - adapted for mobile (30% larger) */
             .floating-btn-wrapper {
-                display: none;
+                display: block;
+            }
+
+            .btn-room-type {
+                width: 185px;
+                top: 8%;
+                left: -35%;
+            }
+
+            .btn-room-style {
+                width: 185px;
+                top: 40%;
+                right: -35%;
+            }
+
+            .btn-color-palette {
+                width: 195px;
+                bottom: 12%;
+                left: -35%;
+            }
+
+            .floating-btn-glow {
+                filter: blur(18px);
             }
 
             .redesign-grid {

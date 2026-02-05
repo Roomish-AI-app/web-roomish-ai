@@ -316,7 +316,7 @@
         <a href="index.html" class="back-link">&larr; Back to Home</a>
 
         <h1 class="page-title">Privacy Policy</h1>
-        <p class="page-subtitle">Effective Date: December 25, 2025</p>
+        <p class="page-subtitle">Effective Date: February 5, 2026</p>
 
         <div class="content-section">
             <p>THIS PRIVACY POLICY EXPLAINS HOW ROOMISH AI ("WE," "US," OR "OUR") COLLECTS, USES, AND PROTECTS INFORMATION WHEN YOU USE THE ROOMISH AI MOBILE APPLICATION (THE "APP" OR THE "SERVICE").</p>
@@ -342,11 +342,12 @@
                 <li>Anonymous technical identifiers (Firebase Installation ID)</li>
                 <li>Crash logs and performance metrics</li>
                 <li>Basic usage analytics</li>
+                <li>Persistent device identifier (Keychain-based UUID) used to manage free generation limits and prevent abuse. This identifier is stored locally on your device and transmitted to our servers.</li>
             </ul>
             <p>These identifiers:</p>
             <ul>
                 <li>cannot identify you as an individual</li>
-                <li>are deleted when you uninstall the App</li>
+                <li>are deleted when you uninstall the App, except the persistent device identifier (stored in Keychain) which is retained to enforce free generation limits</li>
             </ul>
 
             <h3>1.3. Subscription Data</h3>
@@ -369,11 +370,12 @@
             <p>Data is used solely to:</p>
             <ul>
                 <li>operate the App and its AI features</li>
-                <li>generate interior designs and stylized images</li>
-                <li>store photos and results in "My Rooms"</li>
+                <li>generate room redesigns and stylized images</li>
+                <li>store photos and results in "My Designs"</li>
                 <li>maintain performance and fix crashes</li>
                 <li>enable subscriptions and restore purchases</li>
                 <li>support users who contact us</li>
+                <li>enforce free generation limits and prevent abuse</li>
             </ul>
             <p>We do not use your content for AI training or dataset creation.</p>
 
@@ -382,7 +384,7 @@
             <h3>4.1. Photo Storage</h3>
             <p>Uploaded photos and generated results are stored on our servers to enable the Service.</p>
             <ul>
-                <li>Photos are stored in "My Rooms" and remain until you delete them</li>
+                <li>Photos are stored in "My Designs" and remain until you delete them</li>
                 <li>When you delete a photo from the App, it is permanently removed from our servers</li>
                 <li>We do not keep backups of deleted files</li>
             </ul>
@@ -398,7 +400,8 @@
                 <li>Your photos and results are retained as long as your subscription is active</li>
                 <li>After subscription cancellation, the 90-day inactivity rule applies</li>
             </ul>
-            <p>We recommend saving important photos and designs to your device before canceling your subscription or if you plan to be inactive.</p>
+            <p>We recommend saving important photos and designs to your device before canceling your subscription, deleting the App, or if you plan to be inactive.</p>
+            <p>If you delete and reinstall the App, your subscription can be restored via App Store (Restore Purchase), but previously generated images and saved designs cannot be recovered. Since the App does not require sign-in, generated content is not linked to a user account and cannot be transferred between installations.</p>
 
             <h3>4.3. Immediate Deletion by the User</h3>
             <p>When you delete a file inside the App:</p>
@@ -428,19 +431,23 @@
             <ul>
                 <li>Each new user receives 3 free image generations</li>
                 <li>Free generations are granted once per device</li>
+                <li>Reinstalling the App does not reset free generation credits</li>
             </ul>
 
             <p><strong>PRO Subscriptions:</strong></p>
             <ul>
-                <li>Weekly, monthly, and annual subscriptions are available</li>
+                <li>Weekly, monthly, and yearly subscriptions are available</li>
                 <li>PRO subscriptions provide unlimited image generations</li>
                 <li>Subscriptions do not unlock extra features — they remove generation limits only</li>
             </ul>
 
             <p><strong>Free Trial:</strong></p>
             <ul>
-                <li>A 3-day free trial may be available depending on App Store eligibility</li>
+                <li>Weekly subscription: no free trial</li>
+                <li>Monthly subscription: 3-day free trial</li>
+                <li>Yearly subscription: 7-day free trial</li>
                 <li>If not cancelled at least 24 hours before the trial ends, it converts to a paid subscription</li>
+                <li>During the free trial, you have full PRO access: unlimited generations, no watermarks, and priority processing</li>
             </ul>
 
             <p><strong>Auto-Renewal:</strong></p>
@@ -449,16 +456,18 @@
             </ul>
 
             <h2>6. Age Requirements</h2>
-            <p>Roomish AI does not contain harmful or sensitive content.</p>
-            <p>The App is suitable for users aged 4+ in accordance with App Store guidelines.</p>
+            <p>The App is rated 4+ on the App Store and does not contain age-restricted content.</p>
+            <p>The App is not directed at children under 13 and does not knowingly collect personal information from children. If we become aware that we have inadvertently collected personal information from a child under 13, we will take steps to delete such information promptly.</p>
 
             <h2>7. Data Sharing</h2>
             <p>We do not sell or rent user data.</p>
             <p>We only share minimal required data with service providers that help operate the App, such as:</p>
             <ul>
-                <li>cloud hosting providers</li>
-                <li>analytics services</li>
-                <li>performance and crash reporting tools</li>
+                <li>Google Cloud Platform (cloud hosting and image processing)</li>
+                <li>Firebase Analytics and Firebase Remote Config (usage analytics and app configuration)</li>
+                <li>Firebase Crashlytics (crash reporting)</li>
+                <li>RevenueCat (subscription management)</li>
+                <li>Google AI / Imagen (AI image generation and processing)</li>
             </ul>
             <p>These providers cannot use your data for their own purposes.</p>
             <p>We may disclose limited information only if required by law.</p>
@@ -481,10 +490,17 @@
                 <li>contact support for assistance</li>
             </ul>
             <p>Since we do not collect or store personal data (no accounts, no emails, no names), certain data protection rights (such as data correction or export) do not apply.</p>
+
+            <p><strong>For California Residents (CCPA/CPRA):</strong></p>
+            <p>California residents have additional rights under the California Consumer Privacy Act. Categories of information we collect include: device identifiers, usage data, and user-generated content (photos). We do not sell or share personal information for cross-context behavioral advertising. You may request deletion of your data by contacting <a href="mailto:support@roomish.ai">support@roomish.ai</a>.</p>
+
+            <p><strong>For European Users (GDPR):</strong></p>
+            <p>If you are located in the European Economic Area, you have the right to access, correct, delete, and restrict processing of your data. Our legal basis for processing is legitimate interest (operating the Service) and your consent (uploading photos for processing). To exercise your rights, contact <a href="mailto:support@roomish.ai">support@roomish.ai</a>.</p>
+
             <p>If you delete the App from your device:</p>
             <ul>
                 <li>all anonymous identifiers are removed</li>
-                <li>stored photos in "My Rooms" will be deleted after 90 days of inactivity (if no subscription)</li>
+                <li>stored photos in "My Designs" will be deleted after 90 days of inactivity (if no subscription)</li>
             </ul>
 
             <h2>10. Changes to This Policy</h2>
@@ -504,7 +520,7 @@
                 <img src="images/Logo main 512.png" alt="Roomish AI">
                 <span>Roomish AI</span>
             </div>
-            <p class="footer-copyright">&copy; 2025 Roomish AI. All rights reserved.</p>
+            <p class="footer-copyright">&copy; 2026 Roomish AI. All rights reserved.</p>
         </div>
     </footer>
 </body>

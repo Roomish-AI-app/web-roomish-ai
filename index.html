@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
     <title>Roomish AI - Transform Any Room in 30 Seconds with AI</title>
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
@@ -12,6 +15,10 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+        }
+
+        .mobile-br {
+            display: none;
         }
 
         body {
@@ -120,7 +127,7 @@
 
         .hero-bottom {
             margin-top: auto;
-            margin-bottom: 50px;
+            margin-bottom: 0;
         }
 
         .hero-text h1 {
@@ -193,7 +200,7 @@
             position: relative;
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start;
         }
 
         /* Gradient Blobs */
@@ -684,7 +691,7 @@
             width: 100%;
             height: auto;
             display: block;
-            filter: drop-shadow(0 20px 50px rgba(0, 0, 0, 0.15));
+            border-radius: 36px;
         }
 
         .floating-btn-wrapper {
@@ -828,7 +835,7 @@
         }
 
         .redesign-card {
-            background: #FAFAFB;
+            background: #FFFFFF;
             border-radius: 32px;
             overflow: hidden;
             transition: all 0.3s ease;
@@ -878,7 +885,6 @@
             transform: translateX(-50%);
             width: 53%;
             height: auto;
-            filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.12));
             pointer-events: none;
             object-fit: contain;
         }
@@ -1140,6 +1146,11 @@
             .hero-phone {
                 max-width: 280px;
                 align-items: center;
+                align-self: center;
+            }
+
+            .hero-bottom {
+                margin-bottom: 20px;
             }
 
             .gradient-blob {
@@ -1149,12 +1160,14 @@
             .iphone-mockup {
                 width: 260px;
                 height: auto;
+                filter: none;
             }
 
             .iphone-frame {
                 height: auto;
                 width: 100%;
             }
+
 
             .container {
                 padding: 0 20px;
@@ -1164,8 +1177,13 @@
                 padding: 60px 0;
             }
 
+            .section-header {
+                margin-bottom: 80px;
+            }
+
             .section-header h2 {
                 font-size: 30px;
+                margin-bottom: 14px;
             }
 
             .section-header p {
@@ -1195,12 +1213,16 @@
             }
 
             .phone-mockup-container {
-                width: 160px;
+                width: 260px;
             }
 
             .redesign-grid {
                 grid-template-columns: 1fr;
                 gap: 20px;
+            }
+
+            .redesign-card {
+                background: #FFFFFF;
             }
 
             .redesign-card-text {
@@ -1215,6 +1237,10 @@
                 font-size: 13px;
             }
 
+            .steps-phone-img {
+                border-radius: 28px;
+            }
+
             .cta-section h2 {
                 font-size: 30px;
             }
@@ -1224,8 +1250,14 @@
             }
 
             .footer-nav {
-                flex-wrap: wrap;
+                flex-wrap: nowrap;
                 gap: 6px;
+                font-size: 13px;
+            }
+
+            .footer-nav a {
+                font-size: 13px;
+                padding: 8px 2px;
             }
         }
 
@@ -1282,20 +1314,26 @@
             }
 
             .feature-tags {
-                gap: 8px;
+                gap: 6px;
+                flex-wrap: nowrap;
             }
 
             .feature-tag {
-                padding: 8px 14px;
-                font-size: 12px;
+                padding: 7px 11px;
+                font-size: 11px;
                 border-radius: 100px;
                 backdrop-filter: none;
                 -webkit-backdrop-filter: none;
                 background: rgba(255, 255, 255, 0.8);
+                white-space: nowrap;
             }
 
             .feature-tag:nth-child(3) {
-                display: none;
+                display: inline-block;
+            }
+
+            .mobile-br {
+                display: inline;
             }
 
             .hero-phone {
@@ -1303,6 +1341,10 @@
             }
 
             .iphone-mockup {
+                width: 220px;
+            }
+
+            .phone-mockup-container {
                 width: 220px;
             }
 
@@ -1373,6 +1415,10 @@
                 width: 180px;
             }
 
+            .phone-mockup-container {
+                width: 180px;
+            }
+
             .iphone-screen {
                 border-radius: 22px;
             }
@@ -1403,7 +1449,7 @@
     <section class="hero">
         <div class="hero-container">
             <div class="hero-text">
-                <h1 class="hero-animate">Transform Any Room in 30 Seconds</h1>
+                <h1 class="hero-animate">Transform Any Room in<br class="mobile-br"> 30 Seconds</h1>
                 <p class="hero-description hero-animate">Real designs. Edit what matters.</p>
                 <div class="hero-bottom">
                     <div class="app-badge-wrapper hero-animate">
@@ -1544,7 +1590,7 @@
             <div class="steps-container">
                 <div class="steps-phone">
                     <div class="phone-mockup-container">
-                        <img src="images/Screen2.jpg" alt="Add Photo Screen" class="steps-phone-img">
+                        <img src="images/Screen2.jpg?v=3" alt="Add Photo Screen" class="steps-phone-img">
                     </div>
                 </div>
                 <div class="steps-list">
@@ -1594,14 +1640,14 @@
                         <p class="redesign-card-title">Choose a style</p>
                         <p class="redesign-card-sub">Find the look that fits your room</p>
                     </div>
-                    <img src="images/card-screen-1.jpg" alt="Choose a style" class="card-mockup">
+                    <img src="images/card-screen-1.jpg?v=3" alt="Choose a style" class="card-mockup">
                 </div>
                 <div class="redesign-card">
                     <div class="redesign-card-text">
                         <p class="redesign-card-title">Or use a reference</p>
                         <p class="redesign-card-sub">Apply any style to your own room</p>
                     </div>
-                    <img src="images/card-screen-4.jpg" alt="Use a reference" class="card-mockup">
+                    <img src="images/card-screen-4.jpg?v=3" alt="Use a reference" class="card-mockup">
                 </div>
                 <div class="redesign-card">
                     <div class="redesign-card-text">
@@ -1615,7 +1661,7 @@
                         <p class="redesign-card-title">See the result</p>
                         <p class="redesign-card-sub">Get a realistic room design</p>
                     </div>
-                    <img src="images/card-screen-2.jpg" alt="See the result" class="card-mockup">
+                    <img src="images/card-screen-2.jpg?v=3" alt="See the result" class="card-mockup">
                 </div>
             </div>
         </div>
